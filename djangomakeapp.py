@@ -1,4 +1,25 @@
-import os, sys, time
+import os, sys, time, docopt
+'''
+Application to make multiple django apps, it creates apps with the file arguments that you provide
+and the respective folders are created in the app root folder that you can specify with -fn option.
+
+If you choose to create just the folders then you can use the -s options
+If you choose to create folders and apps but do not need the addapplist.txt then use option -ia
+
+Usage:
+
+  DjangoMakeApp.py -a FILE... [Options]
+
+
+Options:
+  -a FILE               Apps list follows this options
+  --apps FILE           Apps list follows this options
+  -h, -? --help         Show this help message and exit
+  -v, --version         Show version and exit
+  -s, --skip            Skips the django manage.py startapp
+  -fn, --foldername     Application Folder name
+  -ia                   skip creating install apps file
+'''
 
 def mapsHelp():
 	clearscrn()
@@ -31,7 +52,7 @@ def createAppFolders(folders, appFolder):
 			if not os.path.exists(folderName):
 				os.makedirs(folderName)
 				os.system("Python manage.py startapp {} {}".format(fn, folderName))
-				with open("addlist.txt", "a+") as text_file:
+				with open("addapplist.txt", "a+") as text_file:
 					text_file.write("'{}.{}',\n".format(appFolder,fn))
 
 
