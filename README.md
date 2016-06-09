@@ -13,7 +13,7 @@ Ex: python .\djangomakeapp.py Applications "home,about,service,casestudy,faq,med
 ------------------------------"home,about,service,casestudy,faq,media,books,download,jobs,contact" are the apps that will be created
 
 Output: 
-Folders:
+Folder (AppRootFolder):
 - Application 
 
 Apps in the folder:
@@ -33,4 +33,4 @@ python manage.py startapp home Application\home
 
 djangomakeapp also creates a addlist.txt in the same folder which you can add to settings.py under Installed_Apps
 
-I will improve this further as and when i find time.
+I will improve this further as and when i find time. I am exchanging thoughts with Valdimir (docopt) for a robust script.
